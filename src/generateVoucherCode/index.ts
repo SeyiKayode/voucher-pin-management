@@ -56,8 +56,7 @@ async function generateVoucherCode(payload: GenerateVoucherPayload) {
 
         const voucherCodeParams = {
             TableName: process.env.LIPAWORLD_VOUCHER_TABLE,
-            Item: voucherCodeObject,
-            ReturnValues: ReturnValue.ALL_OLD
+            Item: voucherCodeObject
         };
 
         // save voucher code object into db
