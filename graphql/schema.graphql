@@ -1,0 +1,29 @@
+type Mutation {
+    generateVoucherCode(generateVoucherPayload: GenerateVoucherInput): VoucherCodeResponse
+}
+
+type Query {
+    getVoucherCode(id: String): VoucherCodeResponse
+}
+
+input GenerateVoucherInput {
+    name: String
+    sex: String
+}
+
+type VoucherData {
+    id: String
+    item: String
+    name: String
+    sex: String
+    voucherCode: String
+    valid: Boolean
+    createdAt: String
+    updatedAt: String
+    expiryDate: String
+}
+
+type VoucherCodeResponse {
+    voucher: VoucherData
+    error: String
+}
