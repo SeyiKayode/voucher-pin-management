@@ -67,6 +67,7 @@ async function generateVoucherCode(payload: GenerateVoucherPayload) {
             const data = unmarshall(voucherCodeObject);
             data.voucherCode = code;
             
+            console.log(data);
             return { voucher: data };
         };
 

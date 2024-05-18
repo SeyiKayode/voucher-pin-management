@@ -25,6 +25,7 @@ async function getVoucherCode(id: string) {
             const { plaintext } = await decrypt(keyring, Buffer.from(data.voucherCode, 'base64'));
             data.voucherCode = plaintext.toString('utf-8');
             
+            console.log(data);
             return { voucher: data };
         };
 
