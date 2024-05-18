@@ -25,7 +25,7 @@ exports.handler = async (event: any, context: any, callback: any) => {
 
         if ((listVouchersResult.Items?.length ?? 0) > 0) {
             await Promise.all(listVouchersResult.Items!.map(async (item) => {
-                if (currentTime > Number(item.expiryTimestamp.N)) {
+                if (currentTime >= Number(item.expiryTimestamp.N)) {
                     const updateVoucherParams = {
                         ExpressionAttributeNames: {
                             "#VA": "valid",
